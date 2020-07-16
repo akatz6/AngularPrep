@@ -26,17 +26,17 @@ export class EditTodoComponent implements OnInit {
     private todoListService: TodoListService) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.todoListService.getById(this.id).subscribe((response) => {
-      this.todo = response;
-    })
+    // this.id = this.route.snapshot.params['id'];
+    // this.todoListService.getById(this.id).subscribe((response) => {
+    //   this.todo = response;
+    // })
   }
 
   updateTodo(myform){
     this.todo = myform.value;
-    this.todo.id = this.id;
-    this.todoListService.updateTodo(this.todo).subscribe((data) =>{
-      this.router.navigate(['all-todos']);
-    });
+    // this.todo.id = this.id;
+    // this.todoListService.updateTodo(this.todo).subscribe((data) =>{
+    //   this.router.navigate(['all-todos']);
+    // });
   }
 }
