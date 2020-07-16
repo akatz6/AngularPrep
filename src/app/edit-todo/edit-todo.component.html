@@ -1,0 +1,25 @@
+<div class="container">
+  <form #myform="ngForm" (ngSubmit)="updateTodo(myform)" class="form form-register" >
+  <div class="form-group">
+      <label for="exampleFormControlInput1">Item</label>
+      <input name="item" id="item" type="text" class="form-control" [(ngModel)]="todo.item" >
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select class="form-control" id="category" name="category"  [(ngModel)]="todo.category">
+        <option value="Before">Before</option>
+        <option value="Middle">Middle</option>
+        <option value="After">After</option>
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" name="description" id="description" rows="3" 
+      [(ngModel)]="todo.description"></textarea>
+    </div>
+    <br>
+  <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>

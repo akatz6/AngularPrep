@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="form-group">
+    <label for="category">Filter</label>
+    <select class="form-control" id="category" name="category"  (change)="onFilterChanged($event)">
+      <option value="null"></option>
+      <option value="prf">Before</option>
+      <option value="Middle">Middle</option>
+      <option value="After">After</option>
+    </select>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Finished</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos">
+        <td>{{ todo.item }}</td>
+        <td>{{ todo.category }}</td>
+        <td>{{ todo.description }}</td>
+        <td>{{ todo.completed }}</td>
+        <td>
+          <button (click)="updateTodo(todo.id)" class="btn btn-success">
+            Update
+          </button>
+        </td>
+        <td>
+          <button (click)="deleteTodo(todo.id)" class="btn btn-warning">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
